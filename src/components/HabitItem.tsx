@@ -9,7 +9,7 @@ import {
   subDays,
 } from "date-fns";
 import { useHabitContext } from "../contexts/useHabitContext";
-import type { Habit } from "../contexts/HabitContext";
+import type { Habit } from "../contexts/useHabitContext";
 
 function HabitItem({ habit }: { habit: Habit }) {
   const { deleteHabit, toggleHabit } = useHabitContext();
@@ -27,7 +27,7 @@ function HabitItem({ habit }: { habit: Habit }) {
         <div className="flex gap-3 items-center">
           <span className="font-medium ">{habit.name}</span>
           {streakLength !== 0 && (
-            <span className="text-amber-400 text-sm">{streakLength}</span>
+            <span className="text-amber-400 text-sm">{streakLength} 🔥</span>
           )}
         </div>
         <Button
